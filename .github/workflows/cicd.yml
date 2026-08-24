@@ -54,10 +54,6 @@ jobs:
             echo "DOCKER_USERNAME and DOCKERHUB_TOKEN must both be configured as repository secrets."
             exit 1
           fi
-          if [[ "$DOCKER_USERNAME" =~ [[:space:]] || "$DOCKERHUB_TOKEN" =~ [[:space:]] ]]; then
-            echo "Docker Hub credentials must not contain spaces or line breaks."
-            exit 1
-          fi
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v4
